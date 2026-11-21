@@ -1,0 +1,16 @@
+version: 2.1
+jobs:
+  simple_math:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: add numbers
+          command: |
+            x=12
+            y=34
+            echo "x + y = $((x + y))"
+workflows:
+  main:
+    jobs:
+      - simple_math
